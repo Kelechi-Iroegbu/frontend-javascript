@@ -43,3 +43,28 @@ const director1: Directors = {
 };
 
 console.log(director1);
+// Define the Teacher interface
+interface Teacher {
+  readonly firstName: string;      // Only modifiable when initialized
+  readonly lastName: string;       // Only modifiable when initialized
+  fullTimeEmployee: boolean;       // Must always be defined
+  yearsOfExperience?: number;      // Optional
+  location: string;                // Must always be defined
+  [key: string]: any;              // Allows additional attributes (like contract)
+}
+
+// Define the Directors interface extending Teacher
+interface Directors extends Teacher {
+  numberOfReports: number;         // Required property for Directors
+}
+
+// Example usage
+const director1: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
+  fullTimeEmployee: true,
+  numberOfReports: 17,
+};
+
+console.log(director1);
