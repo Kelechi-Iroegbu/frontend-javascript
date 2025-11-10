@@ -60,7 +60,7 @@ document.body.appendChild(table);
 
 
 /** --------------------------
- * 2. Teacher + Directors
+ * 2. Teacher + Director
  * -------------------------- */
 interface Teacher {
   readonly firstName: string;   // only modifiable at initialization
@@ -71,11 +71,11 @@ interface Teacher {
   [key: string]: any;           // allow additional properties
 }
 
-interface Directors extends Teacher {
+interface Directors extends Teacher{
   numberOfReports: number;
 }
 
-const director1: Directors = {
+const director1: Director = {
   firstName: 'John',
   lastName: 'Doe',
   location: 'London',
