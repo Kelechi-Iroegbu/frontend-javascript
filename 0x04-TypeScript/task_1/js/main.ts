@@ -89,11 +89,11 @@ console.log(director1);
 /** --------------------------
  * 3. printTeacher Function
  * -------------------------- */
-interface printTeacherFunction {
+interface print TeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-const printTeacher: printTeacherFunction = (firstName, lastName): string => {
+const printTeacher: print TeacherFunction = (firstName, lastName): string => {
   return `${firstName.charAt(0)}. ${lastName}`;
 };
 
