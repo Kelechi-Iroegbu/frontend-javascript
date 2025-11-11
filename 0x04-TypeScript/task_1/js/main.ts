@@ -90,7 +90,8 @@ interface printTeacherFunction {
 }
 
 const printTeacher: printTeacherFunction = (firstName, lastName): string => {
-  return `${firstName.charAt(0)}. ${lastName}`;
+ // return `${firstName.charAt(0)}. ${lastName}`;
+   return "return `${firstName}. ${lastName}`";
 };
 
 console.log(printTeacher('John', 'Doe')); // J. Doe
