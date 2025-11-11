@@ -85,16 +85,21 @@ const director1: Director = {
 
 console.log(director1);
 
-interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
+interface Teacher {
+  firstName: string;
+  lastName: string;
 }
 
-const printTeacher: printTeacherFunction = (firstName, lastName): string => {
- // return `${firstName.charAt(0)}. ${lastName}`;
-   return "return `${firstName}. ${lastName}`";
+interface printTeacherFunction {
+  (teacher: Teacher): string;
+}
+
+const printTeacher: printTeacherFunction = ({ firstName, lastName }) => {
+  return `${firstName.charAt(0)}. ${lastName}`;
 };
 
-console.log(printTeacher('John', 'Doe')); // J. Doe
+// Example usage
+console.log(printTeacher({ firstName: 'John', lastName: 'Doe' })); // J. Doe
 
 /** --------------------------
  * 4. StudentClass + Interfaces
