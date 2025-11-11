@@ -85,14 +85,13 @@ const director1: Director = {
 
 console.log(director1);
 
-/interface printTeacher function {        
+interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-const printTeacher: print TeacherFunction = 
-  (firstName, lastName): string => {
-    return `${firstName.charAt(0)}. ${lastName}`;
-  };
+const printTeacher: printTeacherFunction = (firstName, lastName): string => {
+  return `${firstName.charAt(0)}. ${lastName}`;
+};
 
 console.log(printTeacher('John', 'Doe')); // J. Doe
 
