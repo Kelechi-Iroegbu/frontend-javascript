@@ -1,27 +1,18 @@
-/** --------------------------
- * 1. Interfaces
- * -------------------------- */
-
-// Director interface
+// DirectorInterface defines expected methods for a Director
 interface DirectorInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
   workDirectorTasks(): string;
 }
 
-// Teacher interface
+// TeacherInterface defines expected methods for a Teacher
 interface TeacherInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
   workTeacherTasks(): string;
 }
 
-
-/** --------------------------
- * 2. Classes implementing interfaces
- * -------------------------- */
-
-// Director class
+// Director class implementing DirectorInterface
 class Director implements DirectorInterface {
   workFromHome(): string {
     return 'Working from home';
@@ -36,7 +27,7 @@ class Director implements DirectorInterface {
   }
 }
 
-// Teacher class
+// Teacher class implementing TeacherInterface
 class Teacher implements TeacherInterface {
   workFromHome(): string {
     return 'Cannot work from home';
@@ -51,10 +42,7 @@ class Teacher implements TeacherInterface {
   }
 }
 
-
-/** --------------------------
- * 3. createEmployee Function
- * -------------------------- */
+// createEmployee function
 function createEmployee(salary: number | string): Director | Teacher {
   if (typeof salary === 'number' && salary < 500) {
     return new Teacher();
@@ -68,22 +56,3 @@ function createEmployee(salary: number | string): Director | Teacher {
     return new Director();
   }
 }
-
-
-/** --------------------------
- * 4. Example usage
- * -------------------------- */
-
-// Director example
-const directorEmployee = createEmployee(1000);
-console.log(directorEmployee.workFromHome());        // Working from home
-console.log('Director tasks:', (directorEmployee as Director).workDirectorTasks());
-
-// Teacher example
-const teacherEmployee = createEmployee(200);
-console.log(teacherEmployee.workFromHome());         // Cannot work from home
-console.log('Teacher tasks:', (teacherEmployee as Teacher).workTeacherTasks());
-
-// Salary as string example
-const employeeFromString = createEmployee('400');
-console.log(employeeFromString.workFromHome());      // Cannot work from home
