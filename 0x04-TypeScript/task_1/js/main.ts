@@ -87,9 +87,9 @@ console.log(director1);
 
 
 /** --------------------------
- * 3. printTeacher Function
+ * 3. print TeacherFunction
  * -------------------------- */
-interface print TeacherFunction {
+interface printTeacher function{
   (firstName: string, lastName: string): string;
 }
 
@@ -97,7 +97,7 @@ const printTeacher: print TeacherFunction = (firstName, lastName): string => {
   return `${firstName.charAt(0)}. ${lastName}`;
 };
 
-console.log(printTeacher ('John', 'Doe')); // J. Doe
+console.log(printTeacher('John', 'Doe')); // J. Doe
 
 
 /** --------------------------
