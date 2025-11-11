@@ -50,10 +50,10 @@ function createEmployee(salary: number | string): Director | Teacher {
   }
 }
 
-// ✅ Must contain: "function isDirector("
-function isDirector(employee: Director | Teacher): employee is Director {
+// ✅ Must contain: "isDirector:"
+const isDirector: (employee: Director | Teacher) => employee is Director = (employee) => {
   return employee instanceof Director;
-}
+};
 
 // ✅ executeWork function
 function executeWork(employee: Director | Teacher): string {
