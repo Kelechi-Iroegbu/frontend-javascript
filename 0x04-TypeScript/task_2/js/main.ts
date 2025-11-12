@@ -50,18 +50,20 @@ function createEmployee(salary: number | string): Director | Teacher {
   }
 }
 
-const isDirector: (employee: Director | Teacher) => employee is Director = (employee) => {
+// ✅ Exported function isDirector (type predicate)
+export function isDirector(employee: Director | Teacher): employee is Director {
   return employee instanceof Director;
-};
+}
 
-const executeWork: (employee: Director | Teacher) => string = (employee) => {
+// ✅ executeWork function
+export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
   } else {
     return employee.workTeacherTasks();
   }
-};
+}
 
 // ✅ Example usage
 console.log(executeWork(createEmployee(200)));   // Getting to work
-console.log(executeWork(createEmployee(1000)));  
+console.log(executeWork(createEmployee(1000)));  /
