@@ -50,7 +50,6 @@ function createEmployee(salary: number | string): Director | Teacher {
   }
 }
 
-// ✅ Use const keyword so code contains “isDirector:” and “executeWork:”
 const isDirector: (employee: Director | Teacher) => employee is Director = (employee) => {
   return employee instanceof Director;
 };
