@@ -83,4 +83,4 @@ export function teachClass(todayClass: Subjects): string {
 
 // ✅ Example usage
 console.log(teachClass('Math'));     // Teaching Math
-console.log(teachClass('History'));  // Teaching Hist
+console.log(teachClass('History'));  // Teaching History
