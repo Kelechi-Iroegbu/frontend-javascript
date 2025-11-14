@@ -1,26 +1,20 @@
-import "./subjects/Cpp";
-import "./subjects/Java";
-import "./subjects/React";
-import { Subjects } from "./subjects/Subject";
 
-
-// Export constants for subjects
-const cpp = new Subjects.Cpp();
-const java = new Subjects.Java();
-const react = new Subjects.React();
-const cTeacher: Subjects.Teacher
-export const cpp = cpp = new Subjects.Cpp();
-export const java = java = new Subjects.Java();
-export const react = react = new Subjects.React();
-
+import { Cpp } from "./subjects/Cpp";
+import { Java } from "./subjects/Java";
+import { React } from "./subjects/React";
+import { Teacher } from "./subjects/Subject";
 
 // Export teacher
-export const cTeacher: Subjects.Teacher = {
-firstName: "John",
-lastName: "Doe",
-experienceTeachingC: 10,
+export const cTeacher: Teacher = {
+  firstName: "John",
+  lastName: "Doe",
+  experienceTeachingC: 10,
 };
 
+// Export constants for subjects using the requested keywords
+export const cpp = new Cpp();
+export const java = new Java();
+export const react = new React();
 
 // Cpp
 console.log("C++");
@@ -28,13 +22,11 @@ cpp.setTeacher(cTeacher);
 console.log(cpp.getRequirements());
 console.log(cpp.getAvailableTeacher());
 
-
 // Java
 console.log("Java");
 java.setTeacher(cTeacher);
 console.log(java.getRequirements());
 console.log(java.getAvailableTeacher());
-
 
 // React
 console.log("React");
